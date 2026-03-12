@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronDash - Dashboard Empresarial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="iron-hud-container">
+        <!-- Casco VR HUD -->
+        <div class="iron-hud">
+            <div class="hud-background"></div>
+            
+            <!-- Panel principal -->
+            <div class="hud-panel main-panel" data-depth="0">
+                <div class="panel-content">
+                    <div class="panel-header">
+                        <h1>IronDash <span class="subtitle">Dashboard Empresarial</span></h1>
+                        <div class="user-info">
+                            <i class="fas fa-user-circle"></i>
+                            <span>CEO Mode</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas principales -->
+                    <div class="metrics-grid">
+                        <div class="metric-card" data-depth="1">
+                            <div class="metric-header">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Revenue</span>
+                            </div>
+                            <div class="metric-value">$124,567</div>
+                            <div class="metric-change positive">+12.5%</div>
+                        </div>
+                        
+                        <div class="metric-card" data-depth="1">
+                            <div class="metric-header">
+                                <i class="fas fa-users"></i>
+                                <span>Clientes</span>
+                            </div>
+                            <div class="metric-value">2,847</div>
+                            <div class="metric-change positive">+8.3%</div>
+                        </div>
+                        
+                        <div class="metric-card" data-depth="1">
+                            <div class="metric-header">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Crecimiento</span>
+                            </div>
+                            <div class="metric-value">94.2%</div>
+                            <div class="metric-change negative">-2.1%</div>
+                        </div>
+                        
+                        <div class="metric-card" data-depth="1">
+                            <div class="metric-header">
+                                <i class="fas fa-tasks"></i>
+                                <span>Tareas</span>
+                            </div>
+                            <div class="metric-value">23/45</div>
+                            <div class="metric-change positive">+45%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gráfico interactivo -->
+                    <div class="chart-container" data-depth="1">
+                        <div class="chart-header">
+                            <h3>Performance Semanal</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active">Ventas</button>
+                                <button class="chart-btn">Clientes</button>
+                                <button class="chart-btn">Ganancias</button>
+                            </div>
+                        </div>
+                        <div class="chart" id="performanceChart"></div>
+                    </div>
+                    
+                    <!-- Tareas urgentes -->
+                    <div class="urgent-tasks" data-depth="1">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Tareas Críticas</h3>
+                        <div class="task-list">
+                            <div class="task-item">
+                                <div class="task-priority high"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Reunión con inversionistas</div>
+                                    <div class="task-time">Hoy 14:00</div>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-priority medium"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Entrega de propuesta</div>
+                                    <div class="task-time">Mañana 10:00</div>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-priority low"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Actualización de sistema</div>
+                                    <div class="task-time">Viernes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Panel lateral -->
+            <div class="hud-panel sidebar-panel" data-depth="2">
+                <div class="panel-content">
+                    <h3>Atajos Rápidos</h3>
+                    <div class="shortcut-grid">
+                        <div class="shortcut-item">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Facturas</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Pedidos</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Reportes</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <i class="fas fa-users"></i>
+                            <span>Equipo</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Mensajes</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Config</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notificaciones -->
+            <div class="hud-panel notification-panel" data-depth="3">
+                <div class="panel-content">
+                    <h3>Notificaciones</h3>
+                    <div class="notification-item new">
+                        <i class="fas fa-bell"></i>
+                        <div>
+                            <div class="notification-title">Nueva venta registrada</div>
+                            <div class="notification-time">2 min</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div class="notification-title">Correo de cliente</div>
+                            <div class="notification-time">15 min</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>
+                            <div class="notification-title">Reporte mensual listo</div>
+                            <div class="notification-time">1 hora</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles flotantes -->
+        <div class="hud-controls">
+            <div class="control-btn" id="toggleFullscreen">
+                <i class="fas fa-expand"></i>
+            </div>
+            <div class="control-btn" id="toggleVR">
+                <i class="fas fa-vr-cardboard"></i>
+            </div>
+            <div class="control-btn" id="toggleDarkMode">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="ironDash.js"></script>
+</body>
+</html>
